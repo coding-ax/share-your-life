@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <AnimationGo >{renderRoutes(routes)}</AnimationGo>
+        <AnimationGo>{renderRoutes(routes)}</AnimationGo>
       </Router>
     </div>
   );

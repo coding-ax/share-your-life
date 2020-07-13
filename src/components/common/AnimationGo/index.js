@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { Switch, useLocation, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import "./index.css";
 
 /**
@@ -10,18 +10,26 @@ import "./index.css";
  * 则反向
  *
  */
-
+const ANIMATION_MAP = {
+  PUSH: "fade",
+  POP: "refade",
+};
 function AnimationGo(props) {
   const { children } = props;
+  console.log(props.history.action);
+  // 根据动作自行判断前进和后退
+
   return (
     <Route
       render={({ location }) => (
-        <TransitionGroup>
-          <CSSTransition
-            timeout={500}
-            classNames={props.way || "fade"}
-            key={location.key}
-          >
+        <TransitionGroup
+          childFactory={(child) =>
+            React.cloneElement(child, {
+              classNames: ANIMATION_MAP[props.history.action],
+            })
+          }
+        >
+          <CSSTransition timeout={500} key={location.pathname}>
             <Switch location={location}>{children}</Switch>
           </CSSTransition>
         </TransitionGroup>
@@ -30,4 +38,4 @@ function AnimationGo(props) {
   );
 }
 
-export default AnimationGo;
+export default withRouter(AnimationGo);

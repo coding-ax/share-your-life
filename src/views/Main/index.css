@@ -1,0 +1,44 @@
+.main-box{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.router-view{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 49px;
+}
+
+.main-tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 49px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 0.5px solid #efefef;
+}
+
+.tab-bar-item {
+    flex: 1;
+}
+
+.tab-item {
+    height: 44px;
+    text-align: center;
+}
+
+.tab-item img {
+    width: auto;
+    height: 70%;
+    margin-left: 30%;
+    margin-top: 10%;
+}

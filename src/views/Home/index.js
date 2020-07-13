@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
+import { withRouter } from "react-router";
 function Home(props) {
-    return (<div>home</div>)
+  return <div>home</div>;
 }
-// 以memo形式导出
-export default React.memo(Home)
+export default React.memo(withRouter(Home));

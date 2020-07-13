@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 import "./Begin.css";
 import cammer from "../../assets/iconfont/Begin/cammer.png";
 import go from "../../assets/iconfont/Begin/go.png";
@@ -10,7 +10,8 @@ function Begin(props) {
     backgroundImage: `url(${background})`,
   };
   // console.log(props)
-  const history = useHistory();
+  // const history = useHistory();
+  const { history } = props;
   return (
     <div className="begin-box" style={setBack}>
       <div className="begin-box-item">
@@ -21,7 +22,7 @@ function Begin(props) {
         <div
           className="begin-icon"
           onClick={() => {
-            history.push("/login")
+            history.push("/login");
             //   history.replace("/login")
           }}
         >
@@ -32,4 +33,4 @@ function Begin(props) {
   );
 }
 // 以memo形式导出
-export default React.memo(Begin);
+export default React.memo(withRouter(Begin));
