@@ -1,11 +1,13 @@
-.main-box{
+.main-box {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    background-color: #ffffff;
 }
-.router-view{
+
+.router-view {
     position: fixed;
     left: 0;
     right: 0;
@@ -25,6 +27,7 @@
     align-items: center;
     text-align: center;
     border-top: 0.5px solid #efefef;
+    background-color: #ffffff;
 }
 
 .tab-bar-item {

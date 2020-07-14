@@ -7,7 +7,7 @@ import routes from "../../routes";
 import { renderRoutes } from "react-router-config";
 
 //图片
-import search from "../../assets/iconfont/Main/search.png";
+
 import home from "../../assets/iconfont/Main/home.png";
 import home_active from "../../assets/iconfont/Main/home_active.png";
 import profile from "../../assets/iconfont/Main/profile.png";
@@ -24,7 +24,6 @@ import AnimationGo from "../../components/common/AnimationGo";
 
 function Main(props) {
   const [activeIndex, setActiveIndex] = useState(1);
-  useEffect(() => {}, [activeIndex]);
 
   let TabBarMessage = [
     {
@@ -80,9 +79,7 @@ function Main(props) {
       <Router>
         <div className="router-view">
           {/**以下为路由界面 */}
-          <div className="wrapper">
-            <AnimationGo>{renderRoutes(props.route.children)}</AnimationGo>
-          </div>
+          <AnimationGo>{renderRoutes(props.route.children)}</AnimationGo>
         </div>
         {/* 以下为tabbar */}
         <div className="main-tab-bar">{TabBar}</div>
