@@ -25,4 +25,13 @@
     flex-wrap: wrap;
     width: 100%;
     /* padding: 10px; */
+    animation: move-y 1s ease;
+}
+@keyframes move-y {
+    0%{
+        transform: translateY(40%);
+    }
+    100%{
+        transform: translate(0);
+    }
 }
