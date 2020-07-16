@@ -18,11 +18,11 @@ const Scroll = forwardRef((props, ref) => {
   const [bScroll, setBScroll] = useState();
 
   const scrollContaninerRef = useRef();
-
+  // bool值
   const { direction, click, refresh, bounceTop, bounceBottom } = props;
-
+  // 下拉 上拉 和滚动监听（函数）
   const { pullUp, pullDown, onScroll } = props;
-
+  // 挂载Bscroll对象
   useEffect(() => {
     const scroll = new BScroll(scrollContaninerRef.current, {
       scrollX: direction === "horizental",
@@ -35,6 +35,7 @@ const Scroll = forwardRef((props, ref) => {
       },
     });
     setBScroll(scroll);
+    // 析构，避免内存泄漏
     return () => {
       setBScroll(null);
     };
@@ -82,7 +83,7 @@ const Scroll = forwardRef((props, ref) => {
       bScroll.refresh();
     }
   });
-
+  // 将Bscroll对象往上传递
   useImperativeHandle(ref, () => ({
     refresh() {
       if (bScroll) {
