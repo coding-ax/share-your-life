@@ -1,9 +1,9 @@
 import React from "react";
-import { useHistory, withRouter } from "react-router-dom";
-import "./Begin.css";
+import { withRouter } from "react-router-dom";
 import cammer from "../../assets/iconfont/Begin/cammer.png";
 import go from "../../assets/iconfont/Begin/go.png";
 import background from "../../assets/img/Begin/background.png";
+import "./Begin.css";
 function Begin(props) {
   const text = "打开生活，发现美好";
   const setBack = {

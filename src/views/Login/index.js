@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
-import GoBack from "../../components/common/BackIcon";
-import "./index.css";
-
+import React, { useState } from "react";
+import { useHistory, withRouter } from "react-router";
 import account from "../../assets/iconfont/Login/account.png";
 import password from "../../assets/iconfont/Login/password.png";
 import qq from "../../assets/iconfont/Login/QQ.png";
 import wechat from "../../assets/iconfont/Login/wechat.png";
-
-import SelfInput from "../../components/common/SelfInput";
-import LoginButton from "../../components/common/LoginButton";
+import GoBack from "../../components/common/BackIcon";
 import IconItem from "../../components/common/IconItem";
-import { withRouter, useHistory } from "react-router";
+import LoginButton from "../../components/common/LoginButton";
+import SelfInput from "../../components/common/SelfInput";
+import "./index.css";
 function Login(props) {
   const [username, setUsername] = useState("");
   const [passd, setPassd] = useState("");

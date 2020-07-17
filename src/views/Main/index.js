@@ -1,30 +1,25 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
 // 路由
 import { withRouter } from "react-router";
-import { NavLink, BrowserRouter as Router } from "react-router-dom";
-import routes from "../../routes";
 import { renderRoutes } from "react-router-config";
-
-//图片
-
-import home from "../../assets/iconfont/Main/home.png";
-import home_active from "../../assets/iconfont/Main/home_active.png";
-import profile from "../../assets/iconfont/Main/profile.png";
-import profile_active from "../../assets/iconfont/Main/profile_active.png";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import find from "../../assets/iconfont/Main/find.png";
 import find_active from "../../assets/iconfont/Main/find_active.png";
+//图片
+import home from "../../assets/iconfont/Main/home.png";
+import home_active from "../../assets/iconfont/Main/home_active.png";
 import message from "../../assets/iconfont/Main/message.png";
 import message_active from "../../assets/iconfont/Main/message_active.png";
-
-//css
-import "./index.css";
+import profile from "../../assets/iconfont/Main/profile.png";
+import profile_active from "../../assets/iconfont/Main/profile_active.png";
 //自定义组件
 import AnimationGo from "../../components/common/AnimationGo";
+import { KeepAlive } from "react-activation";
+//css
+import "./index.css";
 
 function Main(props) {
-  const [activeIndex, setActiveIndex] = useState(1);
-
+  console.log(props);
   let TabBarMessage = [
     {
       id: 1,
@@ -51,6 +46,20 @@ function Main(props) {
       route: "/main/profile",
     },
   ];
+  // 根据路由判断活跃 修复刷新bug
+  let active = props.location.pathname;
+  for (let item of TabBarMessage) {
+    // 初次进入时候为/main 然后再redirect到/main/home,props没有更新
+    if (active === "/main") {
+      active = 1;
+      break;
+    }
+    if (active === item.route) {
+      active = item.id;
+      break;
+    }
+  }
+  const [activeIndex, setActiveIndex] = useState(active);
 
   //tabbar构建
   let TabBar = TabBarMessage.map((item) => {
@@ -83,6 +92,7 @@ function Main(props) {
           <AnimationGo>{renderRoutes(props.route.children)}</AnimationGo>
         </div>
         {/* 以下为tabbar */}
+
         <div className="main-tab-bar">{TabBar}</div>
       </Router>
     </div>

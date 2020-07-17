@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
-import "./index.css";
 import download from "./assets/download.png";
 import loading from "./assets/loading.png";
+import "./index.css";
 //  props handleCLick title describtion downloadCount
 function HomePicItem(props) {
   const { title, desc, imgSrc, downloadCount } = props;
