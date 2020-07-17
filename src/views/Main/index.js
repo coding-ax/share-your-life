@@ -63,6 +63,7 @@ function Main(props) {
           }}
         >
           <img
+            className="tabbar-item-small"
             key={item.id}
             src={item.id === activeIndex ? item.imgSrcActive : item.imgSrc}
             alt=""
@@ -71,7 +72,7 @@ function Main(props) {
       </NavLink>
     );
   });
-  console.log(props);
+  // console.log(props);
 
   return (
     <div className="main-box">

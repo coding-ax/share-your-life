@@ -12,7 +12,7 @@ function Home(props) {
     setSearchContent(text);
   }
   const scroll = useRef();
-  console.log(scroll);
+  // console.log(scroll);
   const handleImgOnloadFinished = () => {
     scroll.current.refresh();
   };

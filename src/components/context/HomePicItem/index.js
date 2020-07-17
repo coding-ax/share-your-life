@@ -20,7 +20,7 @@ function HomePicItem(props) {
         {
           <div
             className="loading-box"
-            style={{display:isLoaded?"none":"flex" }}
+            style={{ display: isLoaded ? "none" : "flex" }}
           >
             <img
               style={{ width: "20px", height: "20px" }}
@@ -32,7 +32,7 @@ function HomePicItem(props) {
         }
         {
           <img
-            style={{display:isLoaded?"block":"none" }}
+            style={{ display: isLoaded ? "block" : "none" }}
             src={imgSrc || "https://picsum.photos/360/460?random=1"}
             onLoad={() => {
               setIsLoaded(true);

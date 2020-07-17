@@ -45,3 +45,45 @@
     margin-left: 30%;
     margin-top: 10%;
 }
+
+/* 添加点击动画 */
+.tabbar-item-small:hover {
+    transform-origin: top right;
+    animation: circle 0.5s linear;
+}
+/* 弹动动画 */
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+
+    12.5% {
+        transform: rotate(-15deg);
+    }
+
+    25% {
+        transform: rotate(0deg);
+    }
+    37.5%{
+        transform: rotate(12deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+
+    62.5% {
+        transform: rotate(-8deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    87.5% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
