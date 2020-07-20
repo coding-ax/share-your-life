@@ -1,0 +1,142 @@
+.message-show-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 49px;
+    top: 0;
+    overflow-y: scroll;
+    padding: 6px;
+    background-color: #ffffff;
+}
+
+.message-scroll-text {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* title */
+.message-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.message-title img{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.message-notice {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+}
+/* BlackButton */
+.message-button{
+    background-color: #000;
+    color: #fff;
+    font-weight: 800;
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 20px;
+    flex: 1;
+}
+.message-button-content{
+    padding: 5px;
+}
+.message-button img{
+    width: 1rem;
+    height: 1rem;
+    animation: show-rorate 1s linear;
+}
+
+@keyframes show-rorate{
+    0%{
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+/* ThreeButtonBox */
+.message-button-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+}
+/* notice */
+.message-all-sixin{
+    margin-top: 25px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    padding-left: 15px;
+    color: #000;
+    font-weight: 800;
+}
+
+/* Message */
+.message-content-self{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.message-box-left{
+    width: 15%;
+    text-align: center;
+    padding: 10px 2px 0 10px;
+}
+.message-box-left img{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+}
+.message-box-right{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    padding:8px 15px 0 0;
+}
+
+.message-detail-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.message-nickname{
+    font-size: 15px;
+    color: #000;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+}
+.message-time{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.message-desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 70%;
+}
