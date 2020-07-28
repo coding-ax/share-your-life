@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, withRouter } from "react-router";
+
+// 导入图标
 import account from "../../assets/iconfont/Login/account.png";
 import password from "../../assets/iconfont/Login/password.png";
 import qq from "../../assets/iconfont/Login/QQ.png";
@@ -8,19 +10,24 @@ import GoBack from "../../components/common/BackIcon";
 import IconItem from "../../components/common/IconItem";
 import LoginButton from "../../components/common/LoginButton";
 import SelfInput from "../../components/common/SelfInput";
+
+// 导入网络包
+import { instance } from "../../network";
+// 导入css
 import "./index.css";
 function Login(props) {
+  // 声明username和passd作为参数注册
   const [username, setUsername] = useState("");
   const [passd, setPassd] = useState("");
 
+  // 绑定输入值
   const handleUsernameChange = (text) => {
     setUsername(text);
   };
   const handlePassdChange = (text) => {
     setPassd(text);
   };
-  const history = useHistory();
-  // go back fixed
+
   return (
     <div className="container">
       <GoBack />
@@ -50,8 +57,13 @@ function Login(props) {
             <LoginButton
               text="登录"
               handleClick={() => {
-                console.log(history.action);
-                history.push("/main");
+                instance
+                  .post(
+                    `/login?username=${username}&password=${passd}&current_time=${new Date().toLocaleString()}`
+                  )
+                  .then((res) => {
+                    console.log(res);
+                  });
               }}
             ></LoginButton>
           </div>

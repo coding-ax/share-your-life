@@ -18,7 +18,6 @@ function AnimationGo(props) {
   const { children } = props;
   // console.log(props.history.action);
   // 根据动作自行判断前进和后退
-
   return (
     <Route
       render={({ location }) => (

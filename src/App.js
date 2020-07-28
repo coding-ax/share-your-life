@@ -11,7 +11,9 @@ import AnimationGo from "./components/common/AnimationGo";
 function App() {
   return (
     <div className="App">
-      <Router>{renderRoutes(routes)}</Router>
+      <Router>
+        <AnimationGo>{renderRoutes(routes)}</AnimationGo>
+      </Router>
     </div>
   );
 }
