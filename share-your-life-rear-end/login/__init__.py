@@ -70,6 +70,7 @@ def login_register(conn, username, password, register_time):
     else:
         try:
             # 执行添加语句
+
             sql = "insert into info(username,password,register_time) values(%s,%s,%s)"
             # 组成数据
             add_data = [username, password, register_time]
