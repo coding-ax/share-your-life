@@ -1,10 +1,11 @@
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify
 import flask_cors
 
 import pymysql
 
 # 导入自定义包
 import login
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 # 允许跨域
@@ -77,8 +78,6 @@ def login_in():
     }
     """
     try:
-        # 设置cookies
-        Response.set_cookie("current", 'daiosjdaiojdio')
         # 首先拿到重要的参数
         global conn
         username = str(request.args.get('username'))
@@ -100,6 +99,24 @@ def login_in():
                 "id": 0
             }
         })
+
+
+@app.route("/uploadfile", methods=['post'])
+def upload_file():
+    try:
+        f = request.files.get("pic")
+        # 可以直接通过/static/文件名 访问到
+        f.save('./static/' + secure_filename(f.filename))
+        place = './static/' + secure_filename(f.filename)
+        print(f)
+    except Exception as e:
+        pass
+    return jsonify({
+        'data': {
+            'status': 'ok',
+            'url': place
+        }
+    })
 
 
 if __name__ == '__main__':
