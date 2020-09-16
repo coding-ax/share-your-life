@@ -57,13 +57,7 @@ function Login(props) {
             <LoginButton
               text="登录"
               handleClick={() => {
-                instance
-                  .post(
-                    `/login?username=${username}&password=${passd}&current_time=${new Date().toLocaleString()}`
-                  )
-                  .then((res) => {
-                    console.log(res);
-                  });
+
               }}
             ></LoginButton>
           </div>
